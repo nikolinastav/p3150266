@@ -1,0 +1,60 @@
+/* Το πλοηγητικό μενού με χρήση Flexbox */
+nav {
+    display: flex;
+    align-items: center; /* Κεντράρει τα στοιχεία κάθετα */
+    justify-content: space-between; /* Κατανομή στοιχείων οριζόντια */
+    padding: 10px 20px; /* Εσωτερικό περιθώριο για καλύτερη εμφάνιση */
+    background-color: #5d1f55; /* Σκούρο φόντο για αντίθεση */
+}
+
+nav ul {
+    display: flex;
+    list-style: none; /* Αφαίρεση bullets από τη λίστα */
+    margin: 0; /* Αφαίρεση εξωτερικών περιθωρίων */
+    padding: 0; /* Αφαίρεση εσωτερικών περιθωρίων */
+    gap: 15px; /* Απόσταση μεταξύ των στοιχείων */
+}
+
+nav ul li a {
+    text-decoration: none; /* Αφαίρεση υπογραμμίσεων από τους συνδέσμους */
+    color: #fff; /* Λευκό κείμενο για καλύτερη ορατότητα */
+    font-weight: bold; /* Έντονη γραμματοσειρά */
+    padding: 5px 10px; /* Εσωτερικό περιθώριο για ευκολότερη ανάγνωση */
+    border-radius: 5px; /* Στρογγυλεμένες γωνίες */
+    transition: background-color 0.3s; /* Ομαλή μετάβαση στο hover */
+}
+
+nav ul li a:hover {
+    background-color: #772571; /* Αλλαγή χρώματος φόντου κατά το hover */
+}
+
+/* Διάταξη δύο στηλών με χρήση CSS Grid */
+.grid_2_columns {
+    width: 100%; /* Πλάτος 100% */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Δύο στήλες ίδιου πλάτους */
+    gap: 10px; /* Απόσταση μεταξύ των στηλών */
+    margin: 20px 0; /* Εξωτερικό περιθώριο για καλύτερη διάταξη */
+}
+
+/* Κεντράρισμα περιεχομένου μέσα σε div */
+.center_div {
+    margin: auto; /* Κεντράρισμα οριζόντια */
+    display: flex;
+    justify-content: center; /* Κεντράρισμα οριζόντια */
+    align-items: center; /* Κεντράρισμα κάθετα */
+}
+
+/* Στυλ για το header */
+header div {
+    display: grid;
+    grid-template-columns: 120px auto; /* Πλάτος για λογότυπο και κείμενο */
+    gap: 10px; /* Απόσταση μεταξύ λογότυπου και κειμένου */
+    align-items: center; /* Κεντράρισμα κάθετα */
+}
+
+header div h1 {
+    text-align: left; /* Τοποθέτηση του κειμένου αριστερά */
+    font-size: 1.8em; /* Αυξημένο μέγεθος γραμματοσειράς */
+    margin: 0; /* Αφαίρεση περιθωρίων */
+}

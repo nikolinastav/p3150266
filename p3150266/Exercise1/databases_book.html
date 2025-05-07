@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Τα βασικά για την SQL - Οι σχέσεις στον κόσμο των δεδομένων</title>
+    <link rel="stylesheet" type="text/css" href="../Exercise2/general_css.css">
+    <link rel="stylesheet" type="text/css" href="../Exercise3/exersize3_css.css">
+    <link rel="stylesheet" type="text/css" href="../Exercise4/exersize4_css.css">
+</head>
+
+<body>
+
+    <header class="grey_background white_letters">
+        <div>
+            <img id="logo_img" src="../logo.png">
+            <h1>Μάθε από.. το Σπίτι σου</h1>
+        </div>        
+        <nav>
+            <ul>
+                <li><a href="../index.html" class="white_letters">Αρχική</a></li>
+                <li><a href="categories.html" class="white_letters">Κατηγορίες</a></li>
+                <li><a href="about_us.html" class="white_letters">Ποιοι Είμαστε</a></li>
+                <li><a href="../Exercise5/registrationForm.html" class="white_letters">Εγγραφή</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="padding_25">
+        <h1 class="center_text">Τα βασικά για την SQL - Οι σχέσεις στον κόσμο των δεδομένων</h1>
+        <p class="center_text">Συγγραφέας: Καλοβασάκης Μανώλης</p>
+        <p class="center_text">Έτος Έκδοσης: 2022</p>
+
+        <section class="add_img_section">
+            <div class="center_div">
+                <div>
+                    <img src="Images/Databases/order.jpg" alt="Εξώφυλλο Βιβλίου">
+                </div>
+            </div>
+            
+            <p class="big_letters">Αξιολόγηση: ⭐⭐⭐⭐⭐ (443 Αξιολογήσεις)</p>
+        </section>
+
+        <p><a href="databases.html" class="back-btn">&larr; Πίσω στην Κατηγορία SQL</a></p>
+
+        <section>
+            <h2>Περίληψη</h2>
+            <p class="margin_25">Τα πάντα γύρω μας μπορούν να αποθηκευτούν σε βάσεις δεδομένων. Και μάλλον οδεύουμε στο να συμβεί και σύντομα!
+            Έχεις αναρωτηθεί ποτέ πώς συσχετίζονται τα δεδομένα στον κόσμο της επιστήμης της πληροφορίας, ή ακόμα και τι σημαίνει ότι τα δεδομένα σχετίζονται μεταξύ τους;
+            Κάνε τα πρώτα σου βήματα στον κόσμο των σχεσιακών βάσεων και μέσα από πρακτικά παραδείγματα σε PostgreSQL, φτιάξε την πρώτη σου σχεσιακή βάση δεδομένων. Παίξε με τα δεδομένα και ανακάλυψε τη μαγεία της συσχέτισης της πληροφορίας!</p>
+        </section>
+
+        <section id="toc">
+            <h2>Πίνακας Περιεχομένων</h2>
+            <ol>
+                <li><a href="#chapter1">Εισαγωγή στις Βάσεις Δεδομένων</a></li>
+                <li><a href="#chapter2">Σχεσιακό Μοντέλο Δεδομένων</a></li>
+                <li><a href="#chapter3">Βασικές Εντολές SQL</a></li>
+                <li><a href="#chapter4">Σύνθετες Εντολές SQL</a></li>
+                <li><a href="#chapter5">Πρακτικές Εφαρμογές σε PostgreSQL</a></li>
+            </ol>
+        </section>
+
+        <section id="chapter1">
+            <h2>Κεφάλαιο 1: Εισαγωγή στις Βάσεις Δεδομένων</h2>
+            <p>Σε αυτό το κεφάλαιο, θα εξερευνήσουμε τις βασικές έννοιες των βάσεων δεδομένων, την ιστορία τους, και τη σημασία τους στον σύγχρονο κόσμο της τεχνολογίας. 
+            Θα μάθετε πώς οι βάσεις δεδομένων αποτελούν το θεμέλιο της αποθήκευσης και διαχείρισης πληροφοριών.</p>
+            <div class="img_container">
+                <img src="Images/Databases/db_nash.jpg" alt="Εικόνα Κεφαλαίου 1">
+                <p class="caption">Εικόνα 1: Διάγραμμα μιας βάσης δεδομένων</p>
+            </div>
+            <p><a href="#toc">Επιστροφή στον Πίνακα Περιεχομένων</a></p>
+        </section>
+        
+        <section id="chapter2">
+            <h2>Κεφάλαιο 2: Σχεσιακό Μοντέλο Δεδομένων</h2>
+            <p>Το σχεσιακό μοντέλο είναι ένα από τα πιο γνωστά μοντέλα βάσεων δεδομένων και χρησιμοποιείται εκτενώς στις περισσότερες επιχειρήσεις. 
+            Θα εξετάσουμε πώς λειτουργούν οι πίνακες, ποιος είναι ο ρόλος των κλειδιών (πρωτεύοντα και ξένα) και πώς αναπτύσσουμε σχέσεις μεταξύ δεδομένων.</p>
+            <div class="img_container">
+                <img src="Images/Databases/db_room.jpg" alt="Εικόνα Κεφαλαίου 2">
+                <p class="caption">Εικόνα 2: Σχέσεις μεταξύ πινάκων</p>
+            </div>
+            <p><a href="#toc">Επιστροφή στον Πίνακα Περιεχομένων</a></p>
+        </section>
+        
+        <section id="chapter3">
+            <h2>Κεφάλαιο 3: Βασικές Εντολές SQL</h2>
+            <p>Σε αυτό το κεφάλαιο, θα παρουσιάσουμε τις βασικές εντολές SQL, όπως SELECT, INSERT, UPDATE και DELETE. 
+            Αυτές οι εντολές είναι απαραίτητες για την ανάκτηση και διαχείριση δεδομένων σε μια σχεσιακή βάση δεδομένων.</p>
+            <div class="img_container">
+                <img src="Images/Databases/db_nash2.jpg" alt="Εικόνα Κεφαλαίου 3">
+                <p class="caption">Εικόνα 3: Εντολές SQL σε δράση</p>
+            </div>
+            <p><a href="#toc">Επιστροφή στον Πίνακα Περιεχομένων</a></p>
+        </section>
+        
+        <section id="chapter4">
+            <h2>Κεφάλαιο 4: Σύνθετες Εντολές SQL</h2>
+            <p>Σε αυτό το κεφάλαιο, θα εμβαθύνουμε σε πιο σύνθετες εντολές SQL, όπως οι JOIN, GROUP BY, και HAVING. 
+            Θα εξετάσουμε πώς να δημιουργούμε πιο σύνθετα ερωτήματα για να αναλύουμε δεδομένα με ακρίβεια και ευελιξία.</p>
+            <div class="img_container">
+                <img src="Images/Databases/nash_cables.jpg" alt="Εικόνα Κεφαλαίου 4">
+                <p class="caption">Εικόνα 4: NASH από δίσκους.</p>
+            </div>
+            <p><a href="#toc">Επιστροφή στον Πίνακα Περιεχομένων</a></p>
+        </section>
+        
+        <section id="chapter5">
+            <h2>Κεφάλαιο 5: Πρακτικές Εφαρμογές σε PostgreSQL</h2>
+            <p>Αυτό το κεφάλαιο επικεντρώνεται στη χρήση της PostgreSQL, μιας δημοφιλούς σχεσιακής βάσης δεδομένων. 
+            Θα μάθετε πώς να δημιουργείτε πίνακες, να εκτελείτε ερωτήματα, και να εφαρμόζετε τα θεωρητικά concepts σε πραγματικές περιπτώσεις.</p>
+            <div class="img_container">
+                <img src="Images/Databases/sqlexam.jpg" alt="Εικόνα Κεφαλαίου 5">
+                <p class="caption">Εικόνα 5: Εφαρμογές PostgreSQL</p>
+            </div>
+            <p><a href="#toc">Επιστροφή στον Πίνακα Περιεχομένων</a></p>
+        </section>
+        
+        <!-- Additional chapters can be added similarly -->
+
+    </main>
+    <footer class="grey_background white_letters">
+        <p><a href="categories.html" class="back-btn">&larr; Πίσω στην Κατηγορία SQL</a></p>
+        <div class="contact-info">
+            <p>Email: contact_us@didaskalia_apo_to_spiti.com</p>
+            <p>Τηλέφωνο: 2734-043434</p>
+          </div>
+        <div class="social-links">
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://twitter.com/">Twitter</a>
+            <a href="https://www.linkedin.com/">LinkedIn</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

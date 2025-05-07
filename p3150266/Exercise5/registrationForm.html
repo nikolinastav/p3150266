@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../Exercise2/general_css.css">
+    <link rel="stylesheet" type="text/css" href="../Exercise3/exersize3_css.css">
+    <link rel="stylesheet" type="text/css" href="../Exercise4/exersize4_css.css">
+    <title>Εγγραφή</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Μορφοποίηση των πεδίων εισόδου */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Στρογγυλεμένες γωνίες */
+}
+
+/* Επιπλέον μορφοποίηση για επιτυχημένη επικύρωση */
+input:valid {
+    border-color: #2ecc71; /* Πράσινο χρώμα για επιτυχημένη επικύρωση */
+}
+
+/* Επιπλέον μορφοποίηση για αποτυχημένη επικύρωση */
+input:invalid {
+    border-color: #e74c3c; /* Κόκκινο χρώμα για αποτυχημένη επικύρωση */
+}
+
+/* Μορφοποίηση για το πεδίο κατηγορίες */
+input#categories {
+    width: calc(100% - 22px); /* Προσαρμογή του πλάτους για να χωράει το εικονίδιο του βέλους */
+}
+</style>
+
+<body>
+
+    <header class="grey_background white_letters">
+        <div>
+            <img id="logo_img" src="../logo.png">
+            <h1>online Αγγελίες</h1>
+        </div>
+
+        <h1>Εγγραφή</h1>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html" class="white_letters">Αρχική</a></li>
+                <li><a href="../Exercise1/categories.html" class="white_letters">Κατηγορίες</a></li>
+                <li><a href="..\Exercise1/about_us.html" class="white_letters">Ποιοι Είμαστε</a></li>
+                <li><a href="registrationForm.html" class="white_letters">Εγγραφή</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="no_page_section">
+        <form action="submit_form.php" method="post" class="light_grey_background margin_25 round_corners padding_25 shadow">
+            <h2 class="center_text">Φόρμα Εγγραφής</h2>
+            <div class="two_column_table grid_2_columns">
+                <label for="name">Ονοματεπώνυμο:</label>
+                <input type="text" id="name" name="name" required pattern="[A-Za-z\s]{3,}">
+                <!-- Επικύρωση: Επιτρέπεται μόνο αλφαβητικοί χαρακτήρες και κενά, τουλάχιστον 3 χαρακτήρες -->
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <!-- Επικύρωση: Έλεγχος αν η μορφή είναι έγκυρη για email -->
+
+                <label for="adres">Διεύθυνση:</label>
+                <input type="text" id="adres" name="adres" required autocomplete="street-address">
+                <!-- Επικύρωση: Απλή υποχρεωτική περιγραφή -->
+
+                <label for="birthdate">Ημ. Γέννησης:</label>
+                <input type="date" id="birthdate" name="birthdate">
+                <!-- Επικύρωση: Ημερομηνία γέννησης, το pattern δεν απαιτείται εδώ -->
+
+                <label for="phone">Τηλέφωνο:</label autocomplete="tel">
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
+                <!-- Επικύρωση: Επιτρέπονται μόνο αριθμοί, ακριβώς 10 ψηφία -->
+
+                <label for="user_name">Username:</label>
+                <input type="text" id="user_name" name="user_name" required pattern="[A-Za-z0-9]{3,}">
+                <!-- Επικύρωση: Επιτρέπονται αλφαριθμητικοί χαρακτήρες, τουλάχιστον 3 χαρακτήρες -->
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required pattern=".{6,}">
+                <!-- Επικύρωση: Ελάχιστο μήκος 6 χαρακτήρες -->
+
+                <label for="c_password">Confirm Password:</label>
+                <input type="password" id="c_password" name="c_password" required pattern=".{6,}">
+                <!-- Επικύρωση: Ελάχιστο μήκος 6 χαρακτήρες και ελέγχουμε την επιβεβαίωση με το JavaScript -->
+
+                <label for="contact_options">επιλογές επικοινωνίας για αποστολή ενημερώσεων, διαφημίσεων:</label>
+                <select id="contact_options">
+                    <option>SMS</option>
+                    <option>Email</option>
+                    <option>Viber</option>
+                    <option>Email</option>
+                    <option>WhatsApp</option>
+                </select>
+
+                <label for="q1">Έχετε ξανακάνει μαθήματα διαδικτυακά;</label>
+                <select id="q1" name="q1">
+                    <option>Όχι</option>
+                    <option>Ναι</option>
+                </select>
+
+                <label for="q2">Αυτή τη στιγμή εργάζεστε σε εταιρεία;</label>
+                <select id="q2" name="q2">
+                    <option>Όχι</option>
+                    <option>Ναι</option>
+                </select>
+
+                <label for="q3">Θέλετε να αρχίσετε να μαθαίνεται λόγω του αντικειμένου σας;</label>                    
+                <select id="q3" name="q3">
+                    <option>Όχι</option>
+                    <option>Ναι</option>
+                </select>
+
+                <label for="q4">Έχετε ολοκληρώσει τριτοβάθμια εκπαίδευση;</label>
+                <select id="q4" name="q4">
+                    <option>Όχι</option>
+                    <option>Ναι</option>
+                </select>
+
+                <label for="q5">Έχετε ολοκληρώσει επαγγελματικά κάποιο project για το οποίο έχουμε κάποιο e-book ή βιντεοδιάλεξη;</label>
+                <select id="q5" name="q5">
+                    <option>Όχι</option>
+                    <option>Ναι</option>
+                </select>
+
+
+            </div>
+            <div class="center_div">
+                <button onclick="return checkPasswordMatch()" class="my-btn center_text white_letters grey_background" type="submit">Εγγραφή</button>
+            </div>
+            
+        </form>
+
+    </main>
+
+    <footer class="grey_background white_letters">
+        <p><a href="../index.html" class="back-btn">&larr; Πίσω</a></p>
+        <div class="contact-info">
+            <p>Email: contact_us@didaskalia_apo_to_spiti.com</p>
+            <p>Τηλέφωνο: 2734-043434</p>
+          </div>
+        <div class="social-links">
+            <a href="https://www.facebook.com/" >Facebook</a>
+            <a href="https://twitter.com/">Twitter</a>
+            <a href="https://www.linkedin.com/">LinkedIn</a>
+        </div>
+    </footer>
+
+</body>
+<script>
+    function checkPasswordMatch() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("c_password").value;
+        var flag = true
+
+        if (password !== confirmPassword) {
+            alert("Οι κωδικοί πρόσβασης δεν ταιριάζουν.")
+            flag = false
+        }
+
+        return flag
+    }
+</script>
+</html>
